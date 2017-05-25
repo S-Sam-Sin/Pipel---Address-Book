@@ -1,4 +1,3 @@
-![alt text](readme/pipel-logo.png)
 # Pipel - Address Book
 ![alt text](readme/pipel-screenshot.png)
 ## ToDo for V1
