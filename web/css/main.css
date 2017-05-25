@@ -35,3 +35,10 @@ body::-webkit-scrollbar-thumb {
 .navbar .btn {
     margin-left: 10px
 }
+
+tr:hover{
+    text-decoration: none;
+    color: #555;
+    background-color: #f5f5f5;
+    cursor:pointer;
+}

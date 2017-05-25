@@ -15,11 +15,11 @@ class __TwigTemplate_f1f01a797644c0b4b024a9ab72a137ede763a72e6c423abf94f37f3194e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8a36bb2d68bb90a62258a00719b907be535c7d7698dc810e74a6c187c8ffe6c6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8a36bb2d68bb90a62258a00719b907be535c7d7698dc810e74a6c187c8ffe6c6->enter($__internal_8a36bb2d68bb90a62258a00719b907be535c7d7698dc810e74a6c187c8ffe6c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/person.html.twig"));
+        $__internal_5d31b96aa534170f4b75ae089fd017dbdbe432ace35b84cc29821e4815185ce2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5d31b96aa534170f4b75ae089fd017dbdbe432ace35b84cc29821e4815185ce2->enter($__internal_5d31b96aa534170f4b75ae089fd017dbdbe432ace35b84cc29821e4815185ce2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/person.html.twig"));
 
-        $__internal_9887cd7b25cb96f39d60e98fcb1c808a29f9edc09b9b0cb7f1ce20a08a62044e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9887cd7b25cb96f39d60e98fcb1c808a29f9edc09b9b0cb7f1ce20a08a62044e->enter($__internal_9887cd7b25cb96f39d60e98fcb1c808a29f9edc09b9b0cb7f1ce20a08a62044e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/person.html.twig"));
+        $__internal_040ea9c537359f68bc507f4c0199c2a98846e2571ba62c03917ba7a7bb894d36 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_040ea9c537359f68bc507f4c0199c2a98846e2571ba62c03917ba7a7bb894d36->enter($__internal_040ea9c537359f68bc507f4c0199c2a98846e2571ba62c03917ba7a7bb894d36_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/person.html.twig"));
 
         // line 1
         echo "<div class=\"col-md-6\" style=\"height:85vh; overflow-y: scroll;\">
@@ -171,10 +171,10 @@ class __TwigTemplate_f1f01a797644c0b4b024a9ab72a137ede763a72e6c423abf94f37f3194e
     </div>
 </div>";
         
-        $__internal_8a36bb2d68bb90a62258a00719b907be535c7d7698dc810e74a6c187c8ffe6c6->leave($__internal_8a36bb2d68bb90a62258a00719b907be535c7d7698dc810e74a6c187c8ffe6c6_prof);
+        $__internal_5d31b96aa534170f4b75ae089fd017dbdbe432ace35b84cc29821e4815185ce2->leave($__internal_5d31b96aa534170f4b75ae089fd017dbdbe432ace35b84cc29821e4815185ce2_prof);
 
         
-        $__internal_9887cd7b25cb96f39d60e98fcb1c808a29f9edc09b9b0cb7f1ce20a08a62044e->leave($__internal_9887cd7b25cb96f39d60e98fcb1c808a29f9edc09b9b0cb7f1ce20a08a62044e_prof);
+        $__internal_040ea9c537359f68bc507f4c0199c2a98846e2571ba62c03917ba7a7bb894d36->leave($__internal_040ea9c537359f68bc507f4c0199c2a98846e2571ba62c03917ba7a7bb894d36_prof);
 
     }
 
@@ -344,6 +344,6 @@ class __TwigTemplate_f1f01a797644c0b4b024a9ab72a137ede763a72e6c423abf94f37f3194e
             </div>
         </div>
     </div>
-</div>", "default/person.html.twig", "/home/grimlorn/Citadel/Architect/Contact-app-Symfony/app/Resources/views/default/person.html.twig");
+</div>", "default/person.html.twig", "/home/grimlorn/Citadel/Pipel---Address-Book/app/Resources/views/default/person.html.twig");
     }
 }

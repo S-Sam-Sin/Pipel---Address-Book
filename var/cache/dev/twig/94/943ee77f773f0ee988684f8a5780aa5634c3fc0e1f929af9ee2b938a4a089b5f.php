@@ -15,11 +15,11 @@ class __TwigTemplate_2ba7a64dc2483c7f9b56979b42060db0f8bf00c1e3bdbda9738999b4f77
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1a5bc9cd51b2e54d64fddc01a5cb02e9a32cc39ac3a1fadcf8eb447f9b148c87 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1a5bc9cd51b2e54d64fddc01a5cb02e9a32cc39ac3a1fadcf8eb447f9b148c87->enter($__internal_1a5bc9cd51b2e54d64fddc01a5cb02e9a32cc39ac3a1fadcf8eb447f9b148c87_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/groups.html.twig"));
+        $__internal_8caf7290ad9ad0b63a8282bf87e8cf26e75dda0b2d790432af8de3503ac40269 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8caf7290ad9ad0b63a8282bf87e8cf26e75dda0b2d790432af8de3503ac40269->enter($__internal_8caf7290ad9ad0b63a8282bf87e8cf26e75dda0b2d790432af8de3503ac40269_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/groups.html.twig"));
 
-        $__internal_71a9028d18c16b066aed5dd100a1a4930e7b2ed4ec0cb13b5e252117b77883c8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_71a9028d18c16b066aed5dd100a1a4930e7b2ed4ec0cb13b5e252117b77883c8->enter($__internal_71a9028d18c16b066aed5dd100a1a4930e7b2ed4ec0cb13b5e252117b77883c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/groups.html.twig"));
+        $__internal_3501914a55d041a8add3cea50ec857ea84aedc572c707b47de76f70cbaa31f30 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3501914a55d041a8add3cea50ec857ea84aedc572c707b47de76f70cbaa31f30->enter($__internal_3501914a55d041a8add3cea50ec857ea84aedc572c707b47de76f70cbaa31f30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/groups.html.twig"));
 
         // line 1
         echo "<div class=\"col-md-2\" style=\"height:85vh; overflow-y: scroll;\">
@@ -35,10 +35,10 @@ class __TwigTemplate_2ba7a64dc2483c7f9b56979b42060db0f8bf00c1e3bdbda9738999b4f77
     </div>
 </div>";
         
-        $__internal_1a5bc9cd51b2e54d64fddc01a5cb02e9a32cc39ac3a1fadcf8eb447f9b148c87->leave($__internal_1a5bc9cd51b2e54d64fddc01a5cb02e9a32cc39ac3a1fadcf8eb447f9b148c87_prof);
+        $__internal_8caf7290ad9ad0b63a8282bf87e8cf26e75dda0b2d790432af8de3503ac40269->leave($__internal_8caf7290ad9ad0b63a8282bf87e8cf26e75dda0b2d790432af8de3503ac40269_prof);
 
         
-        $__internal_71a9028d18c16b066aed5dd100a1a4930e7b2ed4ec0cb13b5e252117b77883c8->leave($__internal_71a9028d18c16b066aed5dd100a1a4930e7b2ed4ec0cb13b5e252117b77883c8_prof);
+        $__internal_3501914a55d041a8add3cea50ec857ea84aedc572c707b47de76f70cbaa31f30->leave($__internal_3501914a55d041a8add3cea50ec857ea84aedc572c707b47de76f70cbaa31f30_prof);
 
     }
 
@@ -73,6 +73,6 @@ class __TwigTemplate_2ba7a64dc2483c7f9b56979b42060db0f8bf00c1e3bdbda9738999b4f77
         <a href=\"#\" class=\"list-group-item\">Colleagues <span class=\"label label-primary pull-right\">14</span></a>
         <a href=\"#\" class=\"list-group-item\">Customers <span class=\"label label-primary pull-right\">14</span></a>
     </div>
-</div>", "default/groups.html.twig", "/home/grimlorn/Citadel/Contact-app-Symfony/app/Resources/views/default/groups.html.twig");
+</div>", "default/groups.html.twig", "/home/grimlorn/Citadel/Pipel---Address-Book/app/Resources/views/default/groups.html.twig");
     }
 }

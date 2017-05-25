@@ -5,22 +5,24 @@
                 <input type="text" class="form-control" placeholder="Search for...">
                 <span class="input-group-btn">
                 </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
+            </div>
+        </div>
+    </div>
     <div class="panel panel-danger">
         <div class="panel-heading">Me</div>
         <table class="table">
             <thead>
             <tr>
                 <th class="text-center"></th>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td class="col-md-2"> <img src="{{ asset('avatars/me.jpg') }}" class="img-circle img-responsive"></td>
-                <td>Cameron Johnsen</td>
+            <tr id="{{ me.id }}">
+                <td class="col-md-2"> <img src="{{ asset('avatars/') }}{{ me.Avatar }} " class="img-circle img-responsive"></td>
+                <td>{{ me.FirstName }}</td>
+                <td>{{ me.LastName }} </td>
             </tr>
             </tbody>
         </table>
@@ -31,22 +33,18 @@
             <thead>
             <tr>
                 <th class="text-center"></th>
-                <th>Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td class="col-md-2"> <img src="{{ asset('avatars/1.jpg') }}" class="img-circle img-responsive"></td>
-                <td>Michele W. Carpenter</td>
+            {% for contact in contacts %}
+            <tr id="{{ contact.id }}">
+                <td class="col-md-2"> <img src="{{ asset('avatars/') }}{{ contact.Avatar }}" class="img-circle img-responsive"></td>
+                <td>{{ contact.FirstName }}</td>
+                <td>{{ contact.LastName }}</td>
             </tr>
-            <tr>
-                <td class="col-md-2"> <img src="{{ asset('avatars/2.jpg') }}" class="img-circle img-responsive"></td>
-                <td>Lynn R. Mason</td>
-            </tr>
-            <tr>
-                <td class="col-md-2"> <img src="{{ asset('avatars/3.jpg') }}" class="img-circle img-responsive"></td>
-                <td>Kennith B. Bogart</td>
-            </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>

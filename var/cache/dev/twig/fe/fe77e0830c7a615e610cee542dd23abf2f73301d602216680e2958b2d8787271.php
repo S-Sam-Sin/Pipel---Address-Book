@@ -21,42 +21,44 @@ class __TwigTemplate_a6dc696e636e7a4ff790bc08a23eba8fc3ef293aa3fa20a00344e91aabb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_36909c14d6bdb66634397a05b14ec87adde7cf0bbe538b043d7af18d68363f30 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_36909c14d6bdb66634397a05b14ec87adde7cf0bbe538b043d7af18d68363f30->enter($__internal_36909c14d6bdb66634397a05b14ec87adde7cf0bbe538b043d7af18d68363f30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_4c068333a46ed4f42233a4123c78007a714c6e86c4f37b90301efc328ab4082c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4c068333a46ed4f42233a4123c78007a714c6e86c4f37b90301efc328ab4082c->enter($__internal_4c068333a46ed4f42233a4123c78007a714c6e86c4f37b90301efc328ab4082c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
-        $__internal_f656e32f16a121866cf449ef0b6e839e94cba4707755b3aa440cf7668e189fc0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f656e32f16a121866cf449ef0b6e839e94cba4707755b3aa440cf7668e189fc0->enter($__internal_f656e32f16a121866cf449ef0b6e839e94cba4707755b3aa440cf7668e189fc0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_61f4f644b35fde008f1a150f380ace3d0ef258152294526839ae87ebb0c76397 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_61f4f644b35fde008f1a150f380ace3d0ef258152294526839ae87ebb0c76397->enter($__internal_61f4f644b35fde008f1a150f380ace3d0ef258152294526839ae87ebb0c76397_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_36909c14d6bdb66634397a05b14ec87adde7cf0bbe538b043d7af18d68363f30->leave($__internal_36909c14d6bdb66634397a05b14ec87adde7cf0bbe538b043d7af18d68363f30_prof);
+        $__internal_4c068333a46ed4f42233a4123c78007a714c6e86c4f37b90301efc328ab4082c->leave($__internal_4c068333a46ed4f42233a4123c78007a714c6e86c4f37b90301efc328ab4082c_prof);
 
         
-        $__internal_f656e32f16a121866cf449ef0b6e839e94cba4707755b3aa440cf7668e189fc0->leave($__internal_f656e32f16a121866cf449ef0b6e839e94cba4707755b3aa440cf7668e189fc0_prof);
+        $__internal_61f4f644b35fde008f1a150f380ace3d0ef258152294526839ae87ebb0c76397->leave($__internal_61f4f644b35fde008f1a150f380ace3d0ef258152294526839ae87ebb0c76397_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7915e05fc55a8a300b2fabcb2b98157e698b1f3a4fe8ad68274c62dd85fe28e2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7915e05fc55a8a300b2fabcb2b98157e698b1f3a4fe8ad68274c62dd85fe28e2->enter($__internal_7915e05fc55a8a300b2fabcb2b98157e698b1f3a4fe8ad68274c62dd85fe28e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a27f963dce8d4343f86501f52046f9e1de06c1e32782e5999c2147db3e96e9e8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a27f963dce8d4343f86501f52046f9e1de06c1e32782e5999c2147db3e96e9e8->enter($__internal_a27f963dce8d4343f86501f52046f9e1de06c1e32782e5999c2147db3e96e9e8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_3eb1db294274cdd523e6005487fc161998c2772176ebf1a82f540ae771bac043 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3eb1db294274cdd523e6005487fc161998c2772176ebf1a82f540ae771bac043->enter($__internal_3eb1db294274cdd523e6005487fc161998c2772176ebf1a82f540ae771bac043_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_f8b95cfdf7a4aab698adcbe79577a1186e81bc030f7f0fcb40b3980a26a56ab1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f8b95cfdf7a4aab698adcbe79577a1186e81bc030f7f0fcb40b3980a26a56ab1->enter($__internal_f8b95cfdf7a4aab698adcbe79577a1186e81bc030f7f0fcb40b3980a26a56ab1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<div class=\"main\">
+        echo "<div id=\"pipel\" class=\"main\">
     <div id=\"group-div\"></div>
     <div id=\"contact-div\"></div>
     <div id=\"person-div\"></div>
+    <div id=\"addpipel-div\"></div>
+    <div id=\"settings-div\"></div>
 </div>
 ";
         
-        $__internal_3eb1db294274cdd523e6005487fc161998c2772176ebf1a82f540ae771bac043->leave($__internal_3eb1db294274cdd523e6005487fc161998c2772176ebf1a82f540ae771bac043_prof);
+        $__internal_f8b95cfdf7a4aab698adcbe79577a1186e81bc030f7f0fcb40b3980a26a56ab1->leave($__internal_f8b95cfdf7a4aab698adcbe79577a1186e81bc030f7f0fcb40b3980a26a56ab1_prof);
 
         
-        $__internal_7915e05fc55a8a300b2fabcb2b98157e698b1f3a4fe8ad68274c62dd85fe28e2->leave($__internal_7915e05fc55a8a300b2fabcb2b98157e698b1f3a4fe8ad68274c62dd85fe28e2_prof);
+        $__internal_a27f963dce8d4343f86501f52046f9e1de06c1e32782e5999c2147db3e96e9e8->leave($__internal_a27f963dce8d4343f86501f52046f9e1de06c1e32782e5999c2147db3e96e9e8_prof);
 
     }
 
@@ -88,12 +90,14 @@ class __TwigTemplate_a6dc696e636e7a4ff790bc08a23eba8fc3ef293aa3fa20a00344e91aabb
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<div class=\"main\">
+<div id=\"pipel\" class=\"main\">
     <div id=\"group-div\"></div>
     <div id=\"contact-div\"></div>
     <div id=\"person-div\"></div>
+    <div id=\"addpipel-div\"></div>
+    <div id=\"settings-div\"></div>
 </div>
 {% endblock %}
-", "default/index.html.twig", "/home/grimlorn/Citadel/Architect/Contact-app-Symfony/app/Resources/views/default/index.html.twig");
+", "default/index.html.twig", "/home/grimlorn/Citadel/Pipel---Address-Book/app/Resources/views/default/index.html.twig");
     }
 }

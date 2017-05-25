@@ -125,8 +125,18 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // person
-        if ($pathinfo === '/person') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::Person',  '_route' => 'person',);
+        if (0 === strpos($pathinfo, '/person') && preg_match('#^/person(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'person')), array (  'id' => 0,  '_controller' => 'AppBundle\\Controller\\DefaultController::Person',));
+        }
+
+        // addpipel
+        if ($pathinfo === '/addpipel') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::Test',  '_route' => 'addpipel',);
+        }
+
+        // settings
+        if ($pathinfo === '/settings') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::Settings',  '_route' => 'settings',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
