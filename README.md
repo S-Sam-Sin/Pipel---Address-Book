@@ -1,4 +1,6 @@
 # Pipel - Address Book
+[![PHP](https://img.shields.io/badge/PHP-7%2B-blue.svg)]()
+[![Symfony](https://img.shields.io/badge/Symfony-3-brightgreen.svg)]()
 ![alt text](readme/pipel-screenshot.png)
 ## ToDo for V1
 - [ ] Complete design with models and input fields
@@ -6,12 +8,6 @@
 - [ ] Input dummy data into the database
 - [ ] Make the whole address book functional with Symfony
 - [ ] Clean code and leave comments
-## Changelog
-23-05-17
-- updated basic design
-- Created logo
-- Created app name (Pipel)
-- Split 3 spaces with jquery
 ## Special Thanks and Credits
 - logo : [Free Logo Design](https://www.freelogodesign.org)
 - Images : [Unsplash](https://unsplash.com)

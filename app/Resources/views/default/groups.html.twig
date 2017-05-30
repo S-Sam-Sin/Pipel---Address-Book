@@ -2,11 +2,11 @@
     <div class="list-group">
         <a href="#" class="list-group-item active">Everybody <span class="label label-primary pull-right">14</span></a>
         <a href="#" class="list-group-item">Not Grouped <span class="label label-primary pull-right">14</span></a>
-        <a href="#" class="list-group-item">Favourites <span class="label label-primary pull-right">14</span></a>
-        <hr>
-        <a href="#" class="list-group-item">Friends <span class="label label-primary pull-right">14</span></a>
-        <a href="#" class="list-group-item">Family <span class="label label-primary pull-right">14</span></a>
-        <a href="#" class="list-group-item">Colleagues <span class="label label-primary pull-right">14</span></a>
-        <a href="#" class="list-group-item">Customers <span class="label label-primary pull-right">14</span></a>
+        {%  for group in groups %}
+            <a href="#" id="{{ group.idGroups }}" class="list-group-item">{{ group.GroupName }} <span class="label label-primary pull-right">{{ group.0.count }}</span></a>
+            {% if group.idGroups == 1 %}
+                <hr>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>

@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use PDO;
+use Doctrine\DBAL\Driver\PDOException;
 
 class DefaultController extends Controller
 {
@@ -14,11 +15,14 @@ class DefaultController extends Controller
     private $password;
     private $dbh;
 
+    private $_baseUrl;
+
+
     public function __construct()
     {
-        $this->dsn = 'mysql:dbname=;host=';
-        $this->user = '';
-        $this->password = '';
+        $this->dsn = 'mysql:dbname=pipel;host=82.196.0.174';
+        $this->user = 'remote';
+        $this->password = '2Kupoisdabest!';
 
         try
         {
@@ -28,6 +32,8 @@ class DefaultController extends Controller
         {
             echo 'Connection failed: ' . $e->getMessage();
         }
+        $this->_baseUrl = "";
+        #$this->_baseUrl = realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR;
     }
 
     /**
@@ -38,7 +44,7 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl
         ]);
     }
 
@@ -48,8 +54,27 @@ class DefaultController extends Controller
      */
     public function Groups(Request $request)
     {
+        # select all groups
+        $sth = $this->dbh->prepare('SELECT *
+                                              FROM Groups');
+        $sth->execute();
+        $groups = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        $count = count($groups);
+
+        # counting contacts
+        for($i=0; $i < $count; $i++)
+        {
+            $sth = $this->dbh->prepare('SELECT Count(Groups_idGroups) AS count
+                                                  FROM Contacts_Groups
+                                                  WHERE Groups_idGroups = ?');
+            $sth->execute(array($groups[$i]["idGroups"]));
+            array_push($groups[$i], $sth->Fetch(PDO::FETCH_ASSOC));
+        }
+
         return $this->render('default/groups.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl,
+            'groups' => $groups
         ]);
     }
 
@@ -71,11 +96,8 @@ class DefaultController extends Controller
         $sth->execute(array(1));
         $contacts = $sth->fetchAll();
 
-        dump($me);
-        dump($contacts);
-
         return $this->render('default/contacts.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl,
             'me' => $me,
             'contacts' => $contacts
         ]);
@@ -87,8 +109,12 @@ class DefaultController extends Controller
      */
     public function Person(Request $request, $id = 0)
     {
+        if($id == 1)
+        {
+            echo 'test';
+        }
         return $this->render('default/person.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl,
         ]);
     }
 
@@ -99,7 +125,7 @@ class DefaultController extends Controller
     public function Test(Request $request)
     {
         return $this->render('default/addpipel.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl,
         ]);
     }
 
@@ -110,7 +136,9 @@ class DefaultController extends Controller
     public function Settings(Request $request)
     {
         return $this->render('default/settings.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+            'base_dir' => $this->_baseUrl,
         ]);
     }
+
+
 }

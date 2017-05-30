@@ -15,11 +15,11 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c4b320197c3300638968c7751e66172cfe912473e5f7fa9754331c807cabfad0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c4b320197c3300638968c7751e66172cfe912473e5f7fa9754331c807cabfad0->enter($__internal_c4b320197c3300638968c7751e66172cfe912473e5f7fa9754331c807cabfad0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/contacts.html.twig"));
+        $__internal_501a0fc6e2106ce4ab15d74fc6193fe664f807cd587d7d016b62855fe26b8d49 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_501a0fc6e2106ce4ab15d74fc6193fe664f807cd587d7d016b62855fe26b8d49->enter($__internal_501a0fc6e2106ce4ab15d74fc6193fe664f807cd587d7d016b62855fe26b8d49_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/contacts.html.twig"));
 
-        $__internal_5370f4791d0f463b7818084e93fd3f85075ea4ea9951c0c2e0ead8f4feee40fe = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5370f4791d0f463b7818084e93fd3f85075ea4ea9951c0c2e0ead8f4feee40fe->enter($__internal_5370f4791d0f463b7818084e93fd3f85075ea4ea9951c0c2e0ead8f4feee40fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/contacts.html.twig"));
+        $__internal_f929c11baa175354e05743dca25b0b51293a493c6fef2d53274579a2b33e7500 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f929c11baa175354e05743dca25b0b51293a493c6fef2d53274579a2b33e7500->enter($__internal_f929c11baa175354e05743dca25b0b51293a493c6fef2d53274579a2b33e7500_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/contacts.html.twig"));
 
         // line 1
         echo "<div class=\"col-md-4\" style=\"height:85vh; overflow-y: scroll;\">
@@ -33,7 +33,12 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
         </div>
     </div>
     <div class=\"panel panel-danger\">
-        <div class=\"panel-heading\">Me</div>
+        <div class=\"panel-heading\">
+            <span class=\"fa-stack fa-lg\">
+                <i class=\"fa fa-circle fa-stack-2x\"></i>
+                <i class=\"fa fa-flag fa-stack-1x fa-inverse\"></i>
+            </span> Me
+        </div>
         <table class=\"table\">
             <thead>
             <tr>
@@ -44,20 +49,20 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
             </thead>
             <tbody>
             <tr id=\"";
-        // line 22
+        // line 27
         echo twig_escape_filter($this->env, $this->getAttribute(($context["me"] ?? $this->getContext($context, "me")), "id", array()), "html", null, true);
         echo "\">
                 <td class=\"col-md-2\"> <img src=\"";
-        // line 23
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("avatars/"), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute(($context["me"] ?? $this->getContext($context, "me")), "Avatar", array()), "html", null, true);
         echo " \" class=\"img-circle img-responsive\"></td>
                 <td>";
-        // line 24
+        // line 29
         echo twig_escape_filter($this->env, $this->getAttribute(($context["me"] ?? $this->getContext($context, "me")), "FirstName", array()), "html", null, true);
         echo "</td>
                 <td>";
-        // line 25
+        // line 30
         echo twig_escape_filter($this->env, $this->getAttribute(($context["me"] ?? $this->getContext($context, "me")), "LastName", array()), "html", null, true);
         echo " </td>
             </tr>
@@ -76,25 +81,25 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
             </thead>
             <tbody>
             ";
-        // line 41
+        // line 46
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["contacts"] ?? $this->getContext($context, "contacts")));
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-            // line 42
+            // line 47
             echo "            <tr id=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["contact"], "id", array()), "html", null, true);
             echo "\">
                 <td class=\"col-md-2\"> <img src=\"";
-            // line 43
+            // line 48
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("avatars/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute($context["contact"], "Avatar", array()), "html", null, true);
             echo "\" class=\"img-circle img-responsive\"></td>
                 <td>";
-            // line 44
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["contact"], "FirstName", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 45
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["contact"], "LastName", array()), "html", null, true);
             echo "</td>
             </tr>
@@ -103,17 +108,16 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 53
         echo "            </tbody>
         </table>
     </div>
-</div>
 </div>";
         
-        $__internal_c4b320197c3300638968c7751e66172cfe912473e5f7fa9754331c807cabfad0->leave($__internal_c4b320197c3300638968c7751e66172cfe912473e5f7fa9754331c807cabfad0_prof);
+        $__internal_501a0fc6e2106ce4ab15d74fc6193fe664f807cd587d7d016b62855fe26b8d49->leave($__internal_501a0fc6e2106ce4ab15d74fc6193fe664f807cd587d7d016b62855fe26b8d49_prof);
 
         
-        $__internal_5370f4791d0f463b7818084e93fd3f85075ea4ea9951c0c2e0ead8f4feee40fe->leave($__internal_5370f4791d0f463b7818084e93fd3f85075ea4ea9951c0c2e0ead8f4feee40fe_prof);
+        $__internal_f929c11baa175354e05743dca25b0b51293a493c6fef2d53274579a2b33e7500->leave($__internal_f929c11baa175354e05743dca25b0b51293a493c6fef2d53274579a2b33e7500_prof);
 
     }
 
@@ -129,7 +133,7 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
 
     public function getDebugInfo()
     {
-        return array (  107 => 48,  98 => 45,  94 => 44,  89 => 43,  84 => 42,  80 => 41,  61 => 25,  57 => 24,  52 => 23,  48 => 22,  25 => 1,);
+        return array (  112 => 53,  103 => 50,  99 => 49,  94 => 48,  89 => 47,  85 => 46,  66 => 30,  62 => 29,  57 => 28,  53 => 27,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -153,7 +157,12 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
         </div>
     </div>
     <div class=\"panel panel-danger\">
-        <div class=\"panel-heading\">Me</div>
+        <div class=\"panel-heading\">
+            <span class=\"fa-stack fa-lg\">
+                <i class=\"fa fa-circle fa-stack-2x\"></i>
+                <i class=\"fa fa-flag fa-stack-1x fa-inverse\"></i>
+            </span> Me
+        </div>
         <table class=\"table\">
             <thead>
             <tr>
@@ -192,7 +201,6 @@ class __TwigTemplate_03b6038bb6c073eca3012009ea095300bf200ebc21ba962c43906644233
             </tbody>
         </table>
     </div>
-</div>
 </div>", "default/contacts.html.twig", "/home/grimlorn/Citadel/Pipel---Address-Book/app/Resources/views/default/contacts.html.twig");
     }
 }
