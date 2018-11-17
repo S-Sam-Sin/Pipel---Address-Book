@@ -7,7 +7,7 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    <div class="ui visible sidebar vertical menu">
+    <div class="ui visible inverted sidebar vertical menu">
         <div class="item">
         <h2 class="ui header">
             <i class="large icons">
@@ -17,6 +17,10 @@
             Pipel
         </h2>
         </div>
+        <a href="{{ path('person_index') }}" class="item">
+            <i class="user icon"></i>
+            My Information
+        </a>
         <a href="{{ path('person_index') }}" class="item">
             <i class="address book icon"></i>
             All Contacts

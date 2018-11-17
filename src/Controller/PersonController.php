@@ -19,11 +19,13 @@ use Symfony\Component\Asset\PathPackage;
 class PersonController extends AbstractController
 {
     public $avatar;
+    public $banner;
 
     public function __construct()
     {
-        $pathPackage = new PathPackage('/images', new StaticVersionStrategy('v1'));
-        $this->avatar = $pathPackage->getUrl('AvatarSilhouette.jpg');
+        $pathPackage = new PathPackage('/build/images', new StaticVersionStrategy('v1'));
+        $this->avatar = $pathPackage->getUrl('AvatarSilhouette-1.jpg');
+        $this->banner = $pathPackage->getUrl('BannerSilhouette.jpg');
     }
 
     /**
@@ -36,7 +38,8 @@ class PersonController extends AbstractController
         return $this->render('person/'.$view.'.html.twig',
             [
                 'people' => $personRepository->findAll(),
-                'avatar' => $this->avatar
+                'avatar' => $this->avatar,
+                'banner' => $this->banner,
             ]);
     }
 
