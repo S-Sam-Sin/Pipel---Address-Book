@@ -3,30 +3,42 @@
 {% block title %}Person index{% endblock %}
 
 {% block body %}
-    <h1>Person index</h1>
-
-    <table class="table">
+    <a href="{{ path('person_new') }}" class="ui right floated teal button">
+        <i class="user plus icon"></i>
+        Create new
+    </a>
+    <h1>
+        <i class="bordered teal address card icon"></i>
+        All Contacts
+    </h1>
+    <table class="ui celled padded table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>MiddleName</th>
-                <th>LastName</th>
-                <th>Slug</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th class="single line">Id</th>
+            <th>FirstName</th>
+            <th>MiddleName & LastName</th>
+            <th>Description</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for person in people %}
             <tr>
-                <td>{{ person.id }}</td>
-                <td>{{ person.firstName }}</td>
-                <td>{{ person.middleName }}</td>
-                <td>{{ person.lastName }}</td>
-                <td>{{ person.slug }}</td>
                 <td>
-                    <a href="{{ path('person_show', {'id': person.id}) }}">show</a>
-                    <a href="{{ path('person_edit', {'id': person.id}) }}">edit</a>
+                    <h2 class="ui center aligned header">{{ person.id }}</h2>
+                </td>
+                <td class="single line">{{ person.firstName }}</td>
+                <td class="right aligned">
+                    {{ person.middleName }}<br>
+                    {{ person.lastName }}
+                </td>
+                <td>{{ person.description }}</td>
+                <td>
+                    <div class="ui buttons">
+                        <a href="{{ path('person_show', {'id': person.id}) }}" class="ui button">show</a>
+                        <div class="or" data-text="or"></div>
+                        <a href="{{ path('person_edit', {'id': person.id}) }}" class="ui positive button">edit</a>
+                    </div>
                 </td>
             </tr>
         {% else %}
@@ -35,7 +47,21 @@
             </tr>
         {% endfor %}
         </tbody>
+        <tfoot>
+        <tr><th colspan="5">
+                <div class="ui right floated pagination menu">
+                    <a class="icon item">
+                        <i class="left chevron icon"></i>
+                    </a>
+                    <a class="item">1</a>
+                    <a class="item">2</a>
+                    <a class="item">3</a>
+                    <a class="item">4</a>
+                    <a class="icon item">
+                        <i class="right chevron icon"></i>
+                    </a>
+                </div>
+            </th>
+        </tr></tfoot>
     </table>
-
-    <a href="{{ path('person_new') }}">Create new</a>
 {% endblock %}

@@ -20,7 +20,10 @@ class PersonController extends AbstractController
      */
     public function index(PersonRepository $personRepository): Response
     {
-        return $this->render('person/index.html.twig', ['people' => $personRepository->findAll()]);
+        return $this->render('person/index.html.twig',
+            [
+                'people' => $personRepository->findAll()
+            ]);
     }
 
     /**
