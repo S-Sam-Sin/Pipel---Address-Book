@@ -1,7 +1,7 @@
 # Pipel - Address Book
 [![PHP](https://img.shields.io/badge/PHP-7%2B-blue.svg)]()
 [![Symfony](https://img.shields.io/badge/Symfony-3-brightgreen.svg)]()
-![alt text](readme/pipel-screenshot.png)
+![alt text](OLD/readme/pipel-screenshot.png)
 ## ToDo for V1
 - [ ] Complete design with models and input fields
 - [ ] Create database with doctrine
