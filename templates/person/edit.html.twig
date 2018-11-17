@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Person{% endblock %}
+
+{% block body %}
+    <a href="{{ path('person_index') }}" class="ui right floated teal button">
+        <i class="arrow alternate circle left outline icon"></i>
+        back to list
+    </a>
+    <h1>
+        <i class="bordered teal address card icon"></i>
+        Edit {{ person.firstName }} {{ person.middleName }} {{ person.lastName }}'s Personal information
+    </h1>
+    {{ include('person/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('person/_delete_form.html.twig') }}
+{% endblock %}

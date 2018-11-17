@@ -1,0 +1,164 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person{% endblock %}
+
+{% block body %}
+    <div class="animated-header">
+        <div class="sides">
+            <a href="{{ path('person_index') }}" class="ui left floated teal button">
+                <i class="arrow alternate circle left outline icon"></i>
+                back to list
+            </a>
+        </div>
+        <div class="sides">
+            <a href="{{ path('person_edit', {'id': person.id}) }}" class="ui right floated teal button">
+                <i class="edit icon"></i>
+                edit
+            </a>
+        </div>
+        <div class="info">
+            <h4><i class="bordered teal address card icon"></i></h4>
+            <h1>
+                {{ person.title }} {{ person.firstName }} {{ person.middleName }} {{ person.lastName }}'s Profile
+            </h1>
+            <div class="meta">
+            </div>
+        </div>
+    </div>
+    <div class="ui grid">
+        <div class="eight wide column profile-left">
+            <div class="ui teal segment">
+                <div class="ui centered aligned card">
+                    <div class="image">
+                        <img class="ui teal bordered tiny image profile-avatar" src="{{ avatar }}">
+                    </div>
+                    <div class="content">
+                        <p class="centered aligned header">{{ person.title }} {{ person.lastName }}</p>
+                    </div>
+                </div>
+                <div class="ui raised fluid teal card">
+                    <div class="content">
+                        <div class="header">Note</div>
+                        <div class="meta">
+                            <span class="category">{{ person.description }}</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column profile-right">
+            <div class="ui right floated horizontal list profile-socials">
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal facebook icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal instagram icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal google plus g icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal twitter icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal snapchat icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal pinterest icon"></i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" target="_blank" rel="nofollow">
+                        <i class="bordered inverted teal linkedin icon"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ui teal segment">
+                <div class="ui raised fluid card">
+                    <div class="content">
+                        <div class="header">Personal Information</div>
+                        <div class="meta">
+                            <span class="category">All about</span>
+                        </div>
+                        <div class="description">
+                            <table class="ui definition table">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Information</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>{{ person.title }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Full Name</td>
+                                    <td>{{ person.firstName }} {{ person.middleName }} {{ person.lastName }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Birthday</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Company</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Home Number</td>
+                                    <td>{{ person.phoneNumber }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile Number</td>
+                                    <td>{{ person.phoneNumber }}</td>
+                                </tr>
+                                <tr>
+                                    <td>SIP</td>
+                                    <td>{{ person.phoneNumber }}</td>
+                                </tr>
+                                <tr>
+                                    <td>E-Mail</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui animated fade teal right floated button" tabindex="0">
+                            <div class="visible content">Export Contact</div>
+                            <div class="hidden content">
+                                Vcard 4.0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

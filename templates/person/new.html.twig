@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Person{% endblock %}
+
+{% block body %}
+    <a href="{{ path('person_index') }}" class="ui right floated teal button">
+        <i class="arrow alternate circle left outline icon"></i>
+        back to list
+    </a>
+    <h1>Create new Cpmtact</h1>
+
+    {{ include('person/_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% form_theme form 'form/fields.html.twig' %}
+
+{{ form_start(form, { 'attr': {'class': 'ui form'} }) }}
+    {{ form_widget(form) }}
+    <a href="{{ path('person_index') }}" class="ui btn right floated teal button">
+        <i class="save icon"></i>
+        {{ button_label|default('Save') }}
+    </a>
+{{ form_end(form) }}

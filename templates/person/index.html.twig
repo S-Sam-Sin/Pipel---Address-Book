@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person index{% endblock %}
+
+{% block body %}
+    <a href="{{ path('person_new') }}" class="ui right floated teal button">
+        <i class="user plus icon"></i>
+        Create new
+    </a>
+    <h1>
+        <i class="bordered teal address card icon"></i>
+        All Contacts
+    </h1>
+    <div class="ui two wide">
+        <a href="{{ path('person_index', {'view': 'index'}) }}" class="ui icon teal button">
+            <i class="address card outline icon"></i>
+        </a>
+        <a href="{{ path('person_index', {'view': 'index-list'}) }}"  class="ui icon button">
+            <i class="list icon"></i>
+        </a>
+    </div>
+
+    <div class="ui four stackable  fluid raised cards">
+        {% for person in people %}
+            <div class="card">
+                <div class="content">
+                    <div class="right floated meta">14h</div>
+                    <i class="venus icon"></i> {{ person.title }}
+                </div>
+                <div class="image">
+                    <img src="{{ avatar }}">
+                </div>
+                <div class="content">
+                    <a class="center aligned header">{{ person.firstName }} {{ person.middleName }} {{ person.lastName }}</a>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <a href="{{ path('person_show', {'id': person.id}) }}" class="ui basic teal button">show</a>
+                        <a href="{{ path('person_edit', {'id': person.id}) }}" class="ui basic positive button">edit</a>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -3,10 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <div class="ui visible inverted sidebar vertical menu">
+        <div class="item">
+        <h2 class="ui header">
+            <i class="large icons">
+                <i class="phone icon"></i>
+                <i class="inverted corner add icon"></i>
+            </i>
+            Pipel
+        </h2>
+        </div>
+        <a href="{{ path('person_index') }}" class="item">
+            <i class="user icon"></i>
+            My Information
+        </a>
+        <a href="{{ path('person_index') }}" class="item">
+            <i class="address book icon"></i>
+            All Contacts
+        </a>
+    </div>
+    <div class="pusher">
+        <div class="ui  container">
+            <div class="ui twelve wide column">
+                <div class="ui segments main-segment">
+                    <div class="ui segment">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
