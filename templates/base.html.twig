@@ -17,6 +17,9 @@
             Pipel
         </h2>
         </div>
+        <div class="item">
+            <img class="ui medium centered avatar image" src="{{ userAvatar }}">
+        </div>
         <a href="{{ path('person_index') }}" class="item">
             <i class="user icon"></i>
             My Information
@@ -24,6 +27,10 @@
         <a href="{{ path('person_index') }}" class="item">
             <i class="address book icon"></i>
             All Contacts
+        </a>
+        <a href="{{ path('app_logout') }}" class="item">
+            <i class="hand scissors outline icon"></i>
+            Logout
         </a>
     </div>
     <div class="pusher">
