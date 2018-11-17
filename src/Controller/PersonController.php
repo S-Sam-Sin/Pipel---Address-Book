@@ -9,20 +9,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Asset\Package;
+use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
+use Symfony\Component\Asset\PathPackage;
 
 /**
  * @Route("/")
  */
 class PersonController extends AbstractController
 {
+    public $avatar;
+
+    public function __construct()
+    {
+        $pathPackage = new PathPackage('/images', new StaticVersionStrategy('v1'));
+        $this->avatar = $pathPackage->getUrl('AvatarSilhouette.jpg');
+    }
+
     /**
      * @Route("/", name="person_index", methods="GET")
      */
     public function index(PersonRepository $personRepository): Response
     {
-        return $this->render('person/index.html.twig',
+        $view = $_GET['view'] ?? 'index';
+
+        return $this->render('person/'.$view.'.html.twig',
             [
-                'people' => $personRepository->findAll()
+                'people' => $personRepository->findAll(),
+                'avatar' => $this->avatar
             ]);
     }
 
@@ -54,7 +68,11 @@ class PersonController extends AbstractController
      */
     public function show(Person $person): Response
     {
-        return $this->render('person/show.html.twig', ['person' => $person]);
+        return $this->render('person/show.html.twig',
+            [
+                'person' => $person,
+                'avatar' => $this->avatar
+            ]);
     }
 
     /**

@@ -3,6 +3,21 @@
 {% block title %}Person{% endblock %}
 
 {% block body %}
+<div class="ui segments">
+    <div class="ui segment">
+        <h1>
+            <i class="bordered teal address card icon"></i>
+            {{ person.firstName }} {{ person.middleName }} {{ person.lastName }}'s Profile
+        </h1>
+        <div class="ui horizontal segments">
+            <div class="ui segment">
+                <img class="ui fluid bordered medium image" src="{{ avatar }}">
+            </div>
+            <div class="ui segment">
+                <p>Middle</p>
+            </div>
+        </div>
+    </div>
     <h1>Person</h1>
 
     <table class="table">
