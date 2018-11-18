@@ -9,22 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
-use Symfony\Component\Asset\PathPackage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class PersonController extends AbstractController
 {
-    public $avatar;
-    public $banner;
-    private $userAvatar;
-
-    public function __construct()
-    {
-        $pathPackage = new PathPackage('/build/images', new StaticVersionStrategy('v1'));
-        $this->avatar = $pathPackage->getUrl('AvatarSilhouette-1.jpg');
-        $this->userAvatar = $pathPackage->getUrl('AvatarSilhouette-admin.jpg');
-    }
 
     /**
      * @Route("/all", name="person_index", methods="GET")
@@ -33,13 +21,12 @@ class PersonController extends AbstractController
     public function list(PersonRepository $personRepository): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $view = $_GET['view'] ?? 'index';
 
         return $this->render('person/'.$view.'.html.twig',
             [
                 'people' => $personRepository->findAll(),
-                'avatar' => $this->avatar,
-                'userAvatar' => $this->userAvatar,
                 'user' => $this->getUser()
             ]);
     }
@@ -77,8 +64,6 @@ class PersonController extends AbstractController
         return $this->render('person/show.html.twig',
             [
                 'person' => $person,
-                'userAvatar' => $this->userAvatar,
-                'avatar' => $this->avatar
             ]);
     }
 

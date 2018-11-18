@@ -31,8 +31,8 @@
                         {#</div>#}
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         {% if error %}
-                            <div class="ui error message">
-                                <div class="header">Action Forbidden</div>
+                            <div class="ui error message" style="display: block">
+                                <div class="header">Error Logging in</div>
                                 <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
                             </div>
                         {% endif %}
