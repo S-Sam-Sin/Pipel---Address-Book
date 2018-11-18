@@ -77,6 +77,7 @@ class PersonController extends AbstractController
         return $this->render('person/show.html.twig',
             [
                 'person' => $person,
+                'userAvatar' => $this->userAvatar,
                 'avatar' => $this->avatar
             ]);
     }
