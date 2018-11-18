@@ -56,11 +56,11 @@ class Person
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Grouping", inversedBy="people")
      */
-    private $groups;
+    private $groupings;
 
     public function __construct()
     {
-        $this->groups = new ArrayCollection();
+        $this->groupings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -157,22 +157,22 @@ class Person
      */
     public function getGroupings(): Collection
     {
-        return $this->groups;
+        return $this->groupings;
     }
 
-    public function addGrouping(Grouping $group): self
+    public function addGrouping(Grouping $grouping): self
     {
-        if (!$this->groups->contains($group)) {
-            $this->groups[] = $group;
+        if (!$this->groupings->contains($grouping)) {
+            $this->groupings[] = $grouping;
         }
 
         return $this;
     }
 
-    public function removeGrouping(Grouping $group): self
+    public function removeGrouping(Grouping $grouping): self
     {
-        if ($this->groups->contains($group)) {
-            $this->groups->removeElement($group);
+        if ($this->groupings->contains($grouping)) {
+            $this->groupings->removeElement($grouping);
         }
 
         return $this;

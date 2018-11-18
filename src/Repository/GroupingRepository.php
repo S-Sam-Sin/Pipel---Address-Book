@@ -19,11 +19,10 @@ class GroupingRepository extends ServiceEntityRepository
         parent::__construct($registry, Grouping::class);
     }
 
-    // /**
-    //  * @return Group[] Returns an array of Group objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Grouping[] Returns an array of Group objects
+    */
+    public function findByGrouping($value) :array
     {
         return $this->createQueryBuilder('g')
             ->andWhere('g.exampleField = :val')
@@ -34,7 +33,7 @@ class GroupingRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Group
