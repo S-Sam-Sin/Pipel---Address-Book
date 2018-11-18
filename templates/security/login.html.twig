@@ -1,0 +1,59 @@
+{% extends 'base-security.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <div class="eight wide column login-left"></div>
+    <div class="eight wide column login-right">
+        <div class="ui segment">
+            <div class="ui one column stackable center aligned page grid">
+                <div class="column twelve wide">
+                    <form  method="post"  class="ui form login-form">
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                        <div class="field">
+                            <label>Username</label>
+                            <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
+                                   class="form-control"
+                                   placeholder="Username" required autofocus>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control"
+                                   placeholder="Password"
+                                   required>
+                        </div>
+                        {#See https://symfony.com/doc/current/security/remember_me.html#}
+                        {#<div class="field">#}
+                            {#<div class="ui checkbox">#}
+                                {#<input type="checkbox" name="_remember_me" tabindex="0" class="hidden">#}
+                                {#<label>Remember me</label>#}
+                            {#</div>#}
+                        {#</div>#}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        {% if error %}
+                            <div class="ui error message">
+                                <div class="header">Action Forbidden</div>
+                                <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+                            </div>
+                        {% endif %}
+                        <button class="ui animated fade large teal button"  type="submit" tabindex="0">
+                            <div class="visible content">Sign in</div>
+                            <div class="hidden content">
+                                I Am Ready!
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="credits">
+        <div class="ui tiny centered aligned header">&#169; 2018 |
+            Made by <a href="https://github.com/S-Sam-Sin" target="_blank">Sayid Omar Sam-Sin</a> |
+             Created with <a href="https://symfony.com/" target="_blank" rel="nofollow">Symfony 4.1</a> &
+            <a href="https://semantic-ui.com/" target="_blank" rel="nofollow">Semantic ui 2.4</a> |
+            Artwork by <a href="https://www.artstation.com/pharrisgenois" target="_blank" rel="nofollow">Philip Harris-Genois</a>
+        </div>
+    </div>
+
+{% endblock %}

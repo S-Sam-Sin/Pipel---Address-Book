@@ -9,42 +9,44 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 use Symfony\Component\Asset\PathPackage;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @Route("/")
- */
 class PersonController extends AbstractController
 {
     public $avatar;
     public $banner;
+    private $userAvatar;
 
     public function __construct()
     {
         $pathPackage = new PathPackage('/build/images', new StaticVersionStrategy('v1'));
         $this->avatar = $pathPackage->getUrl('AvatarSilhouette-1.jpg');
-        $this->banner = $pathPackage->getUrl('BannerSilhouette.jpg');
+        $this->userAvatar = $pathPackage->getUrl('AvatarSilhouette-admin.jpg');
     }
 
     /**
-     * @Route("/", name="person_index", methods="GET")
+     * @Route("/all", name="person_index", methods="GET")
+     * @IsGranted("ROLE_ROOT")
      */
-    public function index(PersonRepository $personRepository): Response
+    public function list(PersonRepository $personRepository): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $view = $_GET['view'] ?? 'index';
 
         return $this->render('person/'.$view.'.html.twig',
             [
                 'people' => $personRepository->findAll(),
                 'avatar' => $this->avatar,
-                'banner' => $this->banner,
+                'userAvatar' => $this->userAvatar,
+                'user' => $this->getUser()
             ]);
     }
 
     /**
      * @Route("/new", name="person_new", methods="GET|POST")
+     * @IsGranted("ROLE_ROOT")
      */
     public function new(Request $request): Response
     {
@@ -67,19 +69,22 @@ class PersonController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="person_show", methods="GET")
+     * @Route("/{id}", name="person_show", methods="GET", requirements={"id"="\d+"} )
+     * @IsGranted("ROLE_ROOT")
      */
     public function show(Person $person): Response
     {
         return $this->render('person/show.html.twig',
             [
                 'person' => $person,
+                'userAvatar' => $this->userAvatar,
                 'avatar' => $this->avatar
             ]);
     }
 
     /**
      * @Route("/{id}/edit", name="person_edit", methods="GET|POST")
+     * @IsGranted("ROLE_ROOT")
      */
     public function edit(Request $request, Person $person): Response
     {
@@ -100,6 +105,7 @@ class PersonController extends AbstractController
 
     /**
      * @Route("/{id}", name="person_delete", methods="DELETE")
+     * @IsGranted("ROLE_ROOT")
      */
     public function delete(Request $request, Person $person): Response
     {

@@ -154,3 +154,52 @@ body {
     margin-top: 1%;
 }
 
+
+body.security-body {
+    overflow: hidden;
+    height:100vh;
+}
+
+.fork-label {
+    padding-top: 3px !important;
+}
+
+.login-left,
+.login-right {
+    height:100vh;
+    padding: 0 !important;
+}
+
+.login-left {
+    background: url("/build/images/login-bg.jpg") center center;
+    background-size: cover;
+}
+
+.login-right .segment {
+    height: 100vh;
+}
+
+.login-form {
+    padding-top: 35vh;
+}
+
+.credits {
+    width: 100%;
+    color: white;
+    background: rgba(50, 50, 50, 1);
+    position: fixed;
+    bottom: 0;
+}
+
+.credits .header {
+    color: white;
+}
+
+.main-menu a{
+    transition: .3s all;
+}
+
+span.first-letter {
+    color: #00B5AD;
+    text-transform: uppercase;
+}

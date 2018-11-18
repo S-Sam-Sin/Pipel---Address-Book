@@ -16,7 +16,7 @@ class PersonFixtures extends Fixture
         $genderOptions = ['male', 'female'];
         $gender = $genderOptions[random_int(0,1)];
 
-        for($i = 0; $i <= 10 ; $i++)
+        for($i = 0; $i <= 11 ; $i++)
         {
             $person = new Person();
             $person->setTitle($faker->title($gender));

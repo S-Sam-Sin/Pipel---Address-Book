@@ -7,15 +7,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    <div class="ui visible inverted sidebar vertical menu">
+    <div class="ui visible inverted sidebar vertical menu main-menu">
         <div class="item">
-        <h2 class="ui header">
-            <i class="large icons">
-                <i class="phone icon"></i>
-                <i class="inverted corner add icon"></i>
-            </i>
-            Pipel
-        </h2>
+            <img class="ui medium centered avatar image" src="{{ userAvatar }}">
         </div>
         <a href="{{ path('person_index') }}" class="item">
             <i class="user icon"></i>
@@ -24,6 +18,18 @@
         <a href="{{ path('person_index') }}" class="item">
             <i class="address book icon"></i>
             All Contacts
+        </a>
+        <a href="{{ path('person_index') }}" class="item">
+            <i class="users icon"></i>
+            Groups
+        </a>
+        <a href="{{ path('app_logout') }}" class="item">
+            <i class="cogs icon"></i>
+            Settings
+        </a>
+        <a href="{{ path('app_logout') }}" class="item">
+            <i class="hand scissors outline icon"></i>
+            Logout
         </a>
     </div>
     <div class="pusher">
