@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="sixteen wide column">
+        <div class="ui segments">
+            <div class="ui segment">
+                <h2 class="ui centered aligned header">Related Contacts</h2>
+                <div class="ui four stackable  fluid raised cards">
+                    {% for relate in related %}
+                        <div class="card">
+                            <div class="content">
+                                <div class="right floated meta">14h</div>
+                                <i class="venus icon"></i> {{ relate.title }}
+                            </div>
+                            <div class="image">
+                                <img src="{{ default_contact_avatar }}">
+                            </div>
+                            <div class="content">
+                                <a class="center aligned header">{{ relate.firstName }} {{ relate.middleName }} {{ relate.lastName }}</a>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui two buttons">
+                                    <a href="{{ path('person_show', {'id': relate.id}) }}"
+                                       class="ui basic teal button">show</a>
+                                    <a href="{{ path('person_edit', {'id': relate.id}) }}"
+                                       class="ui basic positive button">edit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% else %}
+                        <div class="ui warning message">
+                            <div class="header">No Records</div>
+                            <ul class="list">
+                                <li>No related contacts found</li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

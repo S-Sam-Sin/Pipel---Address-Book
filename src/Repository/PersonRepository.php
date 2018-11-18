@@ -33,6 +33,7 @@ class PersonRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->select('
             p.id,
+            p.title,
             p.firstName, 
             p.middleName,
             p.lastName,
@@ -56,7 +57,7 @@ class PersonRepository extends ServiceEntityRepository
      * @return Person[]
      * Find other contacts based on the current persons id and single/multiple grouping a person is in.
      *
-     * $this->getDoctrine()->getRepository(Person::class)->findByGroupingId($person->getId(), $person->getGroupings()->getValues());
+     * $this->getDoctrine()->getRepository(Person::class)->findByGrouping($person->getId(), $person->getGroupings()->getValues());
      */
     public function findByGrouping(int $id, array $grouping, string $order = 'ASC', int $limit = 4) :array
     {
@@ -65,6 +66,7 @@ class PersonRepository extends ServiceEntityRepository
             ->addSelect('g')
             ->select('
             p.id,
+            p.title,
             p.firstName, 
             p.middleName,
             p.lastName,

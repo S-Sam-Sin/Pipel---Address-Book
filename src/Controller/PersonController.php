@@ -24,7 +24,7 @@ class PersonController extends AbstractController
 
         $view = $_GET['view'] ?? 'index';
 
-        return $this->render('person/'.$view.'.html.twig',
+        return $this->render('person/' . $view . '.html.twig',
             [
                 'people' => $personRepository->findAll(),
                 'user' => $this->getUser()
@@ -64,6 +64,10 @@ class PersonController extends AbstractController
         return $this->render('person/show.html.twig',
             [
                 'person' => $person,
+                'related' => $this->getDoctrine()->getRepository(Person::class)->findByRelated($person),
+                'relatedGroups' => $this->getDoctrine()->getRepository(Person::class)->findByGrouping(
+                    $person->getId(), $person->getGroupings()->getValues()
+                )
             ]);
     }
 
@@ -94,7 +98,7 @@ class PersonController extends AbstractController
      */
     public function delete(Request $request, Person $person): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $person->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($person);
             $em->flush();

@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="sixteen wide column">
+        <div class="ui segments">
+            <div class="ui segment">
+                <h2 class="ui center aligned header">Contacts in the same group</h2>
+                <div class="ui four stackable  fluid raised cards">
+                    {% for relategroup in relatedGroups %}
+                        <div class="card">
+                            <div class="content">
+                                <div class="right floated meta">14h</div>
+                                <i class="venus icon"></i> {{ relategroup.title }}
+                            </div>
+                            <div class="image">
+                                <img src="{{ default_contact_avatar }}">
+                            </div>
+                            <div class="content">
+                                <a class="center aligned header">{{ relategroup.firstName }} {{ relategroup.middleName }} {{ relategroup.lastName }}</a>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui two buttons">
+                                    <a href="{{ path('person_show', {'id': relategroup.id}) }}"
+                                       class="ui basic teal button">show</a>
+                                    <a href="{{ path('person_edit', {'id': relategroup.id}) }}"
+                                       class="ui basic positive button">edit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% else %}
+                        <div class="ui warning message">
+                            <div class="header">No Records</div>
+                            <ul class="list">
+                                <li>No related contacts found</li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
