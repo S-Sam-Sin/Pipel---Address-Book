@@ -21,7 +21,6 @@ class PersonController extends AbstractController
 
     public function __construct()
     {
-
         $pathPackage = new PathPackage('/build/images', new StaticVersionStrategy('v1'));
         $this->avatar = $pathPackage->getUrl('AvatarSilhouette-1.jpg');
         $this->userAvatar = $pathPackage->getUrl('AvatarSilhouette-admin.jpg');

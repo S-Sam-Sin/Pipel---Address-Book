@@ -194,3 +194,12 @@ body.security-body {
 .credits .header {
     color: white;
 }
+
+.main-menu a{
+    transition: .3s all;
+}
+
+span.first-letter {
+    color: #00B5AD;
+    text-transform: uppercase;
+}
